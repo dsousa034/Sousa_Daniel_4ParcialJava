@@ -1,0 +1,16 @@
+public class ContadorFinito {
+    int numero;
+
+    public ContadorFinito() {
+        numero = -1;
+    }
+
+    public boolean contarFinito() {
+        while (numero >= 0) {
+            System.out.println("Cuenta atras: " + numero);
+            numero--;
+        }
+        System.out.println("Parar");
+        return false;
+    }
+}

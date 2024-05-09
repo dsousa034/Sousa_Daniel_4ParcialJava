@@ -1,0 +1,14 @@
+public class ContadorInfinito {
+    int numero;
+
+    public ContadorInfinito() {
+        numero = -11;
+    }
+
+    public void contarInfinito() {
+        while (numero != 0) {
+            System.out.println("Cuenta infinita " + numero);
+            numero++;
+        }
+    }
+}
