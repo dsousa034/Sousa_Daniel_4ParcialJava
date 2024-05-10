@@ -1,0 +1,77 @@
+@startuml
+@startuml
+
+interface Handler {
+    +setNext(handler: Handler): void
+    +handle(): boolean
+}
+
+abstract class Maquina {
+    -next: Handler
+    +Maquina()
+    +setNext(handler: Handler): void
+    +handle(): boolean
+}
+
+class HaltChecker {
+    -program: String
+    -imput: String
+    +HaltChecker(program: String, imput: String)
+    +HaltChecker(next: Maquina, program: String, imput: String)
+    +handle(): boolean
+}
+
+class Reverser {
+    -program: String
+    +Reverser(program: String)
+    +Reverser(next: Maquina, program: String)
+    +handle(): boolean
+}
+
+enum TipoIncremento {
+    NEGATIVO
+    POSITIVO
+    NULO
+}
+
+enum TipoWhile {
+    MENOR
+    MAYOR
+    IGUAL
+    OTRO
+}
+
+class AnalizadorCodigo {
+    -texto: String[]
+    -constante: int
+    +AnalizadorCodigo(texto: String)
+    +analizarBucle(linea: String): TipoWhile
+    +analizar(i: int): boolean
+}
+
+class Cliente {
+    -contadorFinitoButton: JButton
+    -button2: JButton
+    -contadorInfinitoButton: JButton
+    -textArea1: JTextArea
+    -textArea2: JTextArea
+    -Ventana: JPanel
+    -reverserButton: JButton
+    -textArea3: JTextArea
+    +Cliente()
+    -leerFichero(ruta: String): String
+    +main(args: String[]): void
+}
+
+Handler <|.. Maquina
+Maquina <|-- HaltChecker
+Maquina <|-- Reverser
+Reverser o-- HaltChecker
+HaltChecker --o AnalizadorCodigo
+Handler o-- Cliente
+AnalizadorCodigo ..> TipoIncremento
+AnalizadorCodigo ..> TipoWhile
+
+@enduml
+
+@enduml
