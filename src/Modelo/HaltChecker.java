@@ -19,14 +19,14 @@ public class HaltChecker extends Maquina{
         this.setNext(next);
     }
 
-    public boolean handle(){
-        int i;
+    public boolean handle(){ //Este metodo se encarga de verificar si el programa se detiene
+        int i; //Se declara una variable de tipo entero
         try {
-            i= Integer.parseInt(imput);
-        } catch (NumberFormatException e) {
-            return true;
+            i= Integer.parseInt(imput); //Se convierte el imput a entero
+        } catch (NumberFormatException e) { //Si hay un error
+            return true; //Retorna verdadero
         }
-        AnalizadorCodigo analizadorCodigo = new AnalizadorCodigo(program);
-        return analizadorCodigo.analizar(i);
+        AnalizadorCodigo analizadorCodigo = new AnalizadorCodigo(program); //Se crea un objeto de la clase AnalizadorCodigo
+        return analizadorCodigo.analizar(i); //Se analiza el codigo
     }
 }

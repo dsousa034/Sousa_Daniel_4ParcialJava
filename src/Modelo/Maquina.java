@@ -1,5 +1,6 @@
 package Modelo;
 
+// Esta clase es parte de la implementación del patrón Chain of Responsibility
 public abstract class Maquina implements Handler{
     protected Handler next;
 
@@ -11,11 +12,12 @@ public abstract class Maquina implements Handler{
         this.next = handler;
     }
 
-    public boolean handle(){
-        if(next != null){
-            next.handle();
+    public boolean handle(){ //Este metodo se encarga de manejar el siguiente
+        if(next != null){ //Si el siguiente no es nulo
+            next.handle(); //Se maneja el siguiente
             return true;
         }
-        return false;
+        //Si el siguiente es nulo
+        return false; //Retorna falso
     }
 }
