@@ -5,12 +5,9 @@ public class ContadorFinito {
         this.numero = numero;
     }
 
-    public boolean contarFinito() {
+    public void contarFinito() {
         while (numero >= 0) {
-            System.out.println("Cuenta atras: " + numero);
             numero--;
         }
-        System.out.println("Parar");
-        return false;
     }
 }

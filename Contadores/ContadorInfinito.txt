@@ -6,8 +6,7 @@ public class ContadorInfinito {
     }
 
     public void contarInfinito() {
-        while (numero < 0) {
-            System.out.println("Cuenta infinita " + numero);
+        while (numero > 0) {
             numero++;
         }
     }
