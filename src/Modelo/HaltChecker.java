@@ -2,10 +2,6 @@ package Modelo;
 
 import Herramientas.AnalizadorCodigo;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-
 public class HaltChecker extends Maquina{
 
     private String program;
