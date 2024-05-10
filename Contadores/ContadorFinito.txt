@@ -1,8 +1,8 @@
 public class ContadorFinito {
     int numero;
 
-    public ContadorFinito() {
-        numero = -1;
+    public ContadorFinito(int numero) {
+        this.numero = numero;
     }
 
     public boolean contarFinito() {
